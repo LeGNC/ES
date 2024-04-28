@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidéo en plein écran</title>
+  <meta charset="UTF-8"> 
   <style>
     /* Masquer la barre d'adresse */
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
-    #videoContainer {
-      width: 100%;
-      height: 100%;
-    }
-    video {
-      width: 100%;
-      height: 100%;
-    }
+    html, body {overflow: hidden;}
   </style>
 </head>
 <body>  
-  <div id="videoContainer" onclick="goFullscreen()">
-    <video id="videoPlayer" controls autoplay>
-      <source src="adfrty/ap.mp4" type="video/mp4">
-    </video>
-  </div>
+  <video id="videoPlayer" controls autoplay>
+    <source src="adfrty\ap.mp4" type="video/mp4">    
+  </video>
 
   <script>
-    function goFullscreen() {
+    window.onload = function() {
       var video = document.getElementById('videoPlayer');
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.mozRequestFullScreen) { /* Firefox */
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { /* IE/Edge */
-        video.msRequestFullscreen();
-      }
       video.play(); // Démarrer automatiquement la lecture
-    }
+      document.documentElement.requestFullscreen(); // Passer en mode plein écran
+    };
   </script>
 </body>
 </html>
+
