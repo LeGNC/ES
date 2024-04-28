@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Page d'accueil</title>
+  <style>
+    /* Masquer la barre d'adresse */
+    html, body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenue sur notre site web</h1>
+  
+  <p>Regardez notre dernière vidéo :</p>
+  
+  <video id="videoPlayer" controls autoplay>
+    <source src="adfrty\1.mp4" type="video/mp4">
+    <!-- Ajoutez des balises source supplémentaires pour d'autres formats de vidéo -->
+    Votre navigateur ne supporte pas la lecture de vidéos en HTML5.
+  </video>
+
+  <script>
+    window.onload = function() {
+      var video = document.getElementById('videoPlayer');
+      video.play(); // Démarrer automatiquement la lecture
+      document.documentElement.requestFullscreen(); // Passer en mode plein écran
+    };
+  </script>
+</body>
+</html>
+
